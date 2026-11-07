@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Infinix — agente local</title>
+  <style>
+    :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif; color: #22212a; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 1280px; background: #f5f5fb; }
+    main { width: 1280px; margin: 0 auto; padding: 52px 72px 30px; overflow: hidden; background: radial-gradient(ellipse at 80% 27%, rgba(231,121,200,.15), transparent 34%), radial-gradient(ellipse at 88% 78%, rgba(95,148,246,.14), transparent 33%), linear-gradient(145deg,#fbfbfe 0%,#f3f4fb 55%,#fff6fb 100%); }
+    header { display: flex; align-items: center; gap: 14px; }
+    .logo { width: 58px; height: 58px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(121,91,206,.18)); }
+    .brand { margin: 0; font-size: 29px; line-height: 1; font-weight: 720; letter-spacing: -1.1px; }
+    .eyebrow { margin-left: 6px; color: #85828e; font-size: 12px; font-weight: 700; letter-spacing: 1.6px; }
+    .hero { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(350px,.8fr); align-items: center; gap: 40px; padding: 64px 12px 48px; }
+    .copy { display: flex; flex-direction: column; align-items: flex-start; }
+    h1 { max-width: 720px; margin: 0 0 22px; font-size: 66px; line-height: 1.07; letter-spacing: -3.5px; font-weight: 760; }
+    h1 span { display: block; color: #9567ed; background: linear-gradient(95deg,#ed74c5,#9567ed 52%,#6398f3); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { max-width: 630px; margin: 0; color: #686673; font-size: 22px; line-height: 1.48; font-weight: 430; }
+    .window { display: flex; flex-direction: column; gap: 26px; padding: 18px; border: 1px solid rgba(255,255,255,.92); border-radius: 32px; background: linear-gradient(145deg,rgba(255,255,255,.86),rgba(248,247,252,.68)); box-shadow: 0 22px 65px rgba(55,45,92,.13), inset 0 1px rgba(255,255,255,.98); backdrop-filter: blur(28px) saturate(1.5); }
+    .chrome { display: flex; align-items: center; gap: 9px; padding: 12px 15px; border-radius: 17px; background: rgba(255,255,255,.63); }
+    .dot { width: 9px; height: 9px; border-radius: 50%; }
+    .dot.pink { background: #ef8a9b; } .dot.yellow { background: #efc46c; } .dot.green { background: #72cba6; }
+    .window-label { margin-left: auto; color: #8a8792; font-size: 11px; font-weight: 700; letter-spacing: 1.4px; }
+    .mark-stage { display: flex; justify-content: center; align-items: center; padding: 8px 0 0; }
+    .stage-circle { display: grid; place-items: center; width: 194px; height: 194px; border: 1px solid rgba(255,255,255,.85); border-radius: 50%; background: radial-gradient(circle at 35% 30%,rgba(255,255,255,.95),rgba(246,243,253,.76)); box-shadow: inset 0 2px 18px rgba(255,255,255,.85),0 12px 32px rgba(89,71,137,.09); }
+    .stage-circle img { width: 154px; height: 154px; object-fit: contain; }
+    .status { display: flex; align-items: center; gap: 11px; padding: 17px 20px; border: 1px solid rgba(226,223,236,.85); border-radius: 18px; background: rgba(255,255,255,.74); color: #33313a; font-size: 13px; font-weight: 650; }
+    .status .green-dot { width: 9px; height: 9px; border-radius: 50%; background: #50c999; box-shadow: 0 0 0 4px rgba(80,201,153,.14); }
+    .workers { margin-left: auto; color: #8c8797; font-size: 11px; font-weight: 600; }
+    .pills { display: flex; flex-wrap: wrap; gap: 12px; padding: 0 12px; }
+    .pill { padding: 12px 20px; border: 1px solid rgba(226,223,236,.92); border-radius: 999px; background: rgba(255,255,255,.72); color: #555360; font-size: 13px; font-weight: 650; box-shadow: 0 2px 10px rgba(55,45,92,.035); }
+    footer { margin: 23px 12px 0; color: #a09daa; font-size: 11px; font-weight: 650; letter-spacing: 1.2px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img class="logo" src="../zeroscript-extension/assets/infinix-mark.png" alt="">
+      <p class="brand">Infinix</p>
+      <span class="eyebrow">AGENTE LOCAL</span>
+    </header>
+    <section class="hero">
+      <div class="copy">
+        <h1>Seu agente,<span>em todos os caminhos.</span></h1>
+        <p class="subtitle">Diagnóstico, automação e orquestração multiagente.<br>Local no Windows e Linux. Suas abas, suas regras.</p>
+      </div>
+      <div class="window" aria-label="Janela ilustrativa do Infinix">
+        <div class="chrome"><i class="dot pink"></i><i class="dot yellow"></i><i class="dot green"></i><span class="window-label">INFINIX · LOCAL</span></div>
+        <div class="mark-stage"><div class="stage-circle"><img src="../zeroscript-extension/assets/infinix-mark.png" alt=""></div></div>
+        <div class="status"><i class="green-dot"></i><span>Supervisor ativo</span><span class="workers">3 workers</span></div>
+      </div>
+    </section>
+    <section class="pills" aria-label="Principais recursos">
+      <span class="pill">Windows + Linux</span>
+      <span class="pill">Abas independentes</span>
+      <span class="pill">Autonomia com limites</span>
+    </section>
+    <footer>INFINIX · MULTIAGENTE · PRIVACIDADE LOCAL</footer>
+  </main>
+</body>
+</html>

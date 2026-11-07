@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root { color-scheme: light; --purple:#8b68ed; --blue:#5f94f6; --pink:#e979c8; --ink:#211d32; --muted:#746f82; }
+    * { box-sizing: border-box; }
+    body { width: 350px; margin: 0; color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: linear-gradient(145deg,#fbfaff 0%,#f3f5ff 55%,#fff5fb 100%); }
+    .wrap { padding: 16px; background: rgba(255,255,255,.66); border: 1px solid rgba(139,104,237,.12); box-shadow: inset 0 1px rgba(255,255,255,.9); }
+    h1 { font-size: 15px; font-weight: 700; letter-spacing: -.25px; margin: 0 0 14px; display: flex; align-items: center; gap: 8px; }
+    .logo { width: 27px; height: 27px; object-fit: contain; filter: drop-shadow(0 2px 5px rgba(121,91,206,.22)); }
+    .brand { background: linear-gradient(100deg,var(--pink),var(--purple) 52%,var(--blue)); color: transparent; -webkit-background-clip:text; background-clip:text; }
+    .ver { font-size: 9.5px; font-weight: 600; letter-spacing: .15px; color: #8e899d; padding: 3px 6px; border: 1px solid rgba(139,104,237,.15); background: rgba(255,255,255,.52); border-radius: 999px; }
+    .provider { margin-left: auto; color: #817b91; font-size: 10px; font-weight: 500; }
+    .status-card { padding: 10px 11px; margin: 0 0 9px; border: 1px solid rgba(131,108,197,.13); border-radius: 13px; background: rgba(255,255,255,.62); box-shadow: 0 4px 14px rgba(69,53,120,.05), inset 0 1px rgba(255,255,255,.85); backdrop-filter: blur(16px) saturate(1.45); }
+    .row { font-size: 11.5px; line-height: 1.45; color: var(--muted); margin: 3px 0; }
+    .status-line { display:flex; align-items:center; gap:8px; color:#514b61; font-weight:600; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; flex:none; background: #aaa5b6; }
+    .dot.on { background: #42bd92; box-shadow: 0 0 0 3px rgba(66,189,146,.13),0 0 8px rgba(66,189,146,.35); }
+    .dot.warn { background: #eca949; box-shadow: 0 0 0 3px rgba(236,169,73,.13); }
+    button { width: 100%; margin-top: 8px; padding: 9px 11px; border: 1px solid rgba(128,103,194,.13); border-radius: 11px; cursor: pointer; font: 600 11.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; transition: transform .18s cubic-bezier(.2,.75,.25,1), box-shadow .18s, background .18s; }
+    button:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(97,74,165,.12); }
+    button:active { transform: scale(.985); }
+    .ghost { color: #554b6c; background: rgba(255,255,255,.72); }
+    .approval { border: 1px solid rgba(236,169,73,.42); border-radius: 13px; padding: 11px; margin: 0 0 9px; background: rgba(255,249,235,.78); box-shadow: 0 5px 16px rgba(143,100,38,.08); }
+    .approval h2 { font-size: 12px; margin: 0 0 7px; color: #6e4e19; }
+    .approval pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 180px; overflow: auto; font: 10.5px ui-monospace,monospace; margin: 6px 0; color: #59472b; }
+    .approve { background: linear-gradient(105deg,#8b68ed,#628ff3); color: white; border:0; font-weight:700; }
+    .reject { background: rgba(255,255,255,.78); color:#7b3548; }
+    .kofi { background: linear-gradient(100deg,rgba(241,120,200,.13),rgba(110,168,255,.13)); color:#8151a9; border-color:rgba(173,112,207,.23); font-weight:700; }
+    code { background: rgba(135,110,196,.09); padding: 1px 5px; border-radius: 5px; color:#5d4a8c; }
+    #servers { white-space: pre-line; font-family: ui-monospace,monospace; opacity:.74; font-size:10px; }
+    #startupHelp { margin-top:10px; color:#827b91; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration:.01ms !important; animation-duration:.01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1><img class="logo" src="assets/infinix-mark.png" alt="" /><span class="brand">Infinix</span><span id="ver" class="ver"></span><span class="provider">AI workspace</span></h1>
+    <section class="status-card">
+      <div class="row status-line"><span id="dot" class="dot"></span><span id="state">Bridge: …</span></div>
+      <div class="row" id="tools"></div>
+      <div class="row" id="agent"></div>
+      <div class="row" id="team"></div>
+    </section>
+    <section class="approval" id="approval" style="display:none">
+      <h2>Revisar ação solicitada</h2>
+      <div class="row" id="approvalSummary"></div>
+      <pre id="approvalArgs"></pre>
+      <button class="approve" id="approve">Aprovar e executar</button>
+      <button class="reject" id="reject">Rejeitar</button>
+    </section>
+    <div class="row status-card" id="servers"></div>
+    <button class="ghost" id="extensionMode">Usar somente extensão: …</button>
+    <button class="ghost" id="reconnect">↻ Reconectar bridge</button>
+    <button class="ghost" id="restart">⟳ Reiniciar servidor Roblox</button>
+    <button class="ghost" id="settings">⚙ Ajustes</button>
+    <button class="kofi" id="kofi">Apoiar o desenvolvimento</button>
+    <div class="row" id="startupHelp">
+      Modo Bridge mantém ferramentas locais. Para usar sem processo local, ative o modo somente extensão (automação do navegador apenas). Para recursos locais, inicie a bridge (<code>start_agent.sh</code> no Linux, <code>Start_Agent.command</code> no macOS ou <code>Start_Agent.bat</code> no Windows).
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

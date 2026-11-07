@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Infinix improvement proposal weekly
+
+[Timer]
+OnCalendar=Sun *-*-* 03:00:00
+Persistent=true
+RandomizedDelaySec=1800
+Unit=zeroscript-self-improve.service
+
+[Install]
+WantedBy=timers.target

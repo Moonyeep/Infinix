@@ -1,0 +1,12 @@
+[Unit]
+Description=Infinix weekly self-improvement proposal
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/ZeroScript-Agent-General
+Environment=ZS_IMPROVE_TIMEOUT=14400
+EnvironmentFile=-%h/.config/zeroscript/improve.env
+ExecStart=/usr/bin/python3 %h/ZeroScript-Agent-General/self_improve.py --repo %h/ZeroScript-Agent-General --mode propose --allow-source-upload
+TimeoutStartSec=4h
+KillMode=control-group
+Nice=10

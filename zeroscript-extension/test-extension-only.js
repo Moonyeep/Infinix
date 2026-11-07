@@ -1,0 +1,23 @@
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+const root = __dirname;
+const background = fs.readFileSync(path.join(root, "background.js"), "utf8");
+const main = fs.readFileSync(path.join(root, "core/main.js"), "utf8");
+const popup = fs.readFileSync(path.join(root, "popup.html"), "utf8");
+const popupJs = fs.readFileSync(path.join(root, "popup.js"), "utf8");
+const css = fs.readFileSync(path.join(root, "overlay.css"), "utf8");
+
+assert.match(background, /let extensionOnly = false/);
+assert.match(background, /get\(\{ extensionOnly: false \}/);
+assert.match(background, /case "set_extension_only"/);
+assert.match(background, /if \(extensionOnly\) \{[\s\S]*?EXTENSION_BROWSER_TOOLS/);
+assert.match(background, /if \(extensionOnly && !String\(msg\.name \|\| ""\)\.startsWith\("agent\.browser\."\)\)/);
+assert.match(main, /A\.bridge\?\.extensionOnly/);
+assert.match(main, /cannot access the filesystem, terminal, Roblox Studio, local MCP servers, or the bridge/);
+assert.match(main, /No local MCP servers are connected/);
+assert.match(popup, /id="extensionMode"/);
+assert.match(popupJs, /type: "set_extension_only"/);
+assert.match(css, /backdrop-filter: blur\(30px\) saturate\(1\.8\)/);
+assert.match(css, /prefers-reduced-transparency: reduce/);
+console.log("extension-only opt-in, scope guard, popup and Liquid Glass regression checks passed");
