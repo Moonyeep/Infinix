@@ -423,7 +423,7 @@ registry = ToolRegistry(
 )
 
 # Acessar arquivo em qualquer lugar
-result = registry.call("file.read", {"path": "C:\\Users\\Arthur\\Documents\\notes.txt"})
+result = registry.call("file.read", {"path": "C:\\Users\\USERNAME\\Documents\\notes.txt"})
 
 # Executar comando do sistema
 result = registry.call("terminal.run", {

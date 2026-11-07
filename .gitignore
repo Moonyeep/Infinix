@@ -13,6 +13,8 @@ probe.py
 logs/
 devtools/
 .zeroscript/
+*.log
+*.bak
 
 # System files
 .DS_Store

@@ -60,7 +60,7 @@ Suite de testes completa:
 | Escopo | Descrição |
 |--------|-----------|
 | `workspace` | Acesso total ao workspace configurado |
-| `user_home` | Acesso à pasta do usuário (C:\Users\Arthur) |
+| `user_home` | Acesso à pasta do usuário (C:\Users\USERNAME) |
 | `system_read` | Leitura de arquivos em qualquer lugar |
 | `system_write` | Escrita em áreas não-críticas do sistema |
 | `process_full` | Execução de qualquer comando |
@@ -121,7 +121,7 @@ workspace = Workspace(
 ```python
 # Com perfil developer ou superior
 result = registry.call("file.read", {
-    "path": "C:\\Users\\Arthur\\Documents\\notes.txt"
+    "path": "C:\\Users\\USERNAME\\Documents\\notes.txt"
 })
 ```
 

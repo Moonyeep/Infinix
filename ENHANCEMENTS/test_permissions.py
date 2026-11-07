@@ -146,7 +146,7 @@ def test_protected_system_paths():
     assert is_protected_system_path("C:/Windows/test.dll") == True
     
     # These should NOT be protected
-    assert is_protected_system_path("C:/Users/Arthur/test.txt") == False
+    assert is_protected_system_path("C:/Users/USERNAME/test.txt") == False
     assert is_protected_system_path("D:/test.txt") == False
     assert is_protected_system_path("C:/temp/file.txt") == False
     
