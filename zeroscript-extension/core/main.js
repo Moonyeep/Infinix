@@ -79,9 +79,9 @@
   }
 
   // Ko-fi tip link.
-  const KOFI_URL = "https://ko-fi.com/sebattfg";
+  const KOFI_URL = "https://ko-fi.com/moonyeep";
   // GitHub releases page - where users download the Bridge + launchers.
-  const GITHUB_URL = "https://github.com/sebattfg/Infinix-Free";
+  const GITHUB_URL = "https://github.com/Moonyeep/Infinix";
   // Shown in the panel instead of a static "Free" label, so a user's screenshot
   // alone tells us which build they're on for debugging. Pulled from
   // manifest.json (single source of truth) rather than duplicated here.

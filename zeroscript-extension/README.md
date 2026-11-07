@@ -19,7 +19,7 @@ It's a Chrome/Edge browser extension plus an optional local bridge. **DeepSeek i
 Use the extension popup and choose **Use extension-only mode**. This mode is opt-in and does not require the bridge process. It provides browser-tab and page automation only. Local file/terminal tools, Roblox Studio, MCP servers, and local agent/team features remain available only in the default Bridge mode. Switch back to Bridge mode in the popup at any time.
 
 **Then set up the Bridge for full local capabilities:**
-1. **Download the Bridge** from the [Infinix GitHub releases page](https://github.com/sebattfg/Infinix-Free)
+1. **Download the Bridge** from the [Infinix GitHub releases page](https://github.com/Moonyeep/Infinix)
 2. **Optional:** open Roblox Studio and load a Place if you need Roblox-specific tools
 3. **Enable the MCP server in Roblox Studio** (first time only): click **Assistant AI** in the top bar, then **...** > **Manage MCP Servers** > **Enable Studio as MCP Server**
 4. **Run the Bridge** - Windows: run `Start_Agent.bat`; macOS: run `Start_Agent.command`; Linux: in the extracted project folder run `chmod +x start_agent.sh && ./start_agent.sh`. On Linux the launcher creates a local virtual environment, installs bridge dependencies, and downloads a managed Python 3.12 into your user directories when needed. It does not use sudo or change system packages. Keep its terminal open while using the extension.
@@ -77,4 +77,4 @@ Both print `PASS`/`FAIL` per case and exit non-zero on failure.
 
 ## Support
 
-☕ [Ko-fi](https://ko-fi.com/sebattfg) - Robux tip passes available in the extension panel
+☕ [Ko-fi](https://ko-fi.com/moonyeep) - Robux tip passes available in the extension panel
