@@ -1,32 +1,33 @@
 # Infinix — Local Autonomous Agent for Windows and Linux
 
-> **⚠️ Project Status:** This is an early-stage project with significant potential but still in development. The codebase is functional but may have rough edges. I'm releasing it as open source to invite community collaboration, improvements, and growth.
+> **⚠️ Project Status:** ABANDONED / BASE FOR COMMUNITY. This project is no longer actively maintained by the original creator. The codebase is released as an open-source foundation for anyone to fork, improve, modify, or build upon. The only requirement: your derivative work must also remain free and open-source (GPL-3.0).
 
-> **Created by:** arthur (Moonyeep) - Built with Manus AI, based on ZeroScript architecture
+> **Original Creator:** Moonyeep - Built with Manus AI, based on ZeroScript architecture
 
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
 ![License](https://img.shields.io/badge/license-GPL--3.0-blue)
-![Status](https://img.shields.io/badge/status-early%20development-yellow)
+![Status](https://img.shields.io/badge/status-abandoned%20(base%20for%20community)-red)
 
 **Infinix** is a local autonomous AI agent for Windows and Linux, controlled through supported browser-based AI chats. Its local bridge provides endpoint diagnostics, workspace tools, browser automation, shell access under a selectable capability profile, and hierarchical multi-agent delegation. No separate model API key is required for browser providers.
 
 ## 📢 About This Project
 
-This project was created by **arthur (Moonyeep)** using **Manus AI**, built upon the **ZeroScript** architecture. While the foundation is solid, this is very much an early-stage project that needs community help to reach its full potential.
+This project was created by **Moonyeep** using **Manus AI**, built upon the **ZeroScript** architecture. The original creator has abandoned this project and is releasing it as an open-source base for the community.
 
-**Why open source?**
-- The project works but has room for major improvements
-- I believe in collaborative development
-- Looking for contributors to help stabilize and expand features
-- Want to make AI agent technology accessible to everyone
+**Why release this?**
+- The project works but needs significant improvements
+- Looking for capable developers to take this base and make it better
+- Fork it, modify it, rebuild it - do whatever you want
+- **Only requirement:** Your derivative work must remain FREE and OPEN-SOURCE (GPL-3.0)
+- No commercial use without keeping it open-source
 
 Roblox Studio is an optional integration. When enabled, Infinix can also control Studio through its MCP server; the general local agent does not require Roblox Studio.
 
 Eight AI providers are supported: **DeepSeek** (chat.deepseek.com, recommended), **ChatGPT** (chatgpt.com), **Google Gemini** (gemini.google.com), **Kimi** (kimi.ai, Moonshot AI), **GLM** (chat.z.ai, Z.ai), **Qwen** (chat.qwen.ai), **Arena** (arena.ai, a multi-model playground) and **Meta AI** (meta.ai). On ChatGPT, screenshots and image input are turned off on purpose: the free tier limits files and images on a separate quota from messages, so vision would only work part of the day. Gemini and Kimi can be unstable: Gemini tends to stop using the Roblox tools in long sessions, and Kimi sometimes uses its own native tools instead of the Roblox commands. On Arena, use **Direct** mode (Infinix only supports Direct; it blocks Start in Battle / Side-by-Side / Agent modes). DeepSeek is the recommended provider.
 
-> 💬 **Stuck? Join the [Discord community](https://discord.gg/9aNyZsMWcb)** get help, share feedback, and follow updates.
+> 💬 **Discord community:** [Join here](https://discord.gg/9aNyZsMWcb) for help and discussions.
 
-> *Also known as: Infinix Roblox, Infinix free download, Roblox ChatGPT agent, Roblox DeepSeek agent, Roblox Gemini agent, Roblox Kimi agent, Roblox GLM agent, Roblox Qwen agent, Roblox Arena agent, Roblox Meta AI agent, Roblox Studio AI automation, Luau AI, MCP Roblox, lemonade alternative free, lemonade.gg alternative, free Roblox AI agent, free lemonade roblox alternative*
+> *Also known as: Free Claude Code alternative, Free Codex alternative, OpenClaw without API key, Infinix Roblox, Infinix free download, Roblox ChatGPT agent, Roblox DeepSeek agent, Roblox Gemini agent, Roblox Kimi agent, Roblox GLM agent, Roblox Qwen agent, Roblox Arena agent, Roblox Meta AI agent, Roblox Studio AI automation, Luau AI, MCP Roblox, lemonade alternative free, lemonade.gg alternative, free Roblox AI agent, free lemonade roblox alternative*
 
 ## ⚠️ Infinix is Free Beware of Paid Copycats
 
@@ -64,7 +65,7 @@ Linux is supported with Chrome/Chromium or Edge and the start_agent.sh launcher.
 
 On Linux, the Amplo session can use the terminal.run_as_admin tool when sudo is available. If needed, the OS desktop opens its askpass authentication dialog. Enter the password there—not in the chat. It is passed directly to sudo, never to the model or Infinix logs, and is not stored by Infinix; the system may cache sudo authorization until its normal timeout.
 
-📺 **Lost? Watch the setup tutorial on YouTube** it covers every step below.
+📺 **Setup tutorial on YouTube** covers every step below.
 
 ### 1. Download the zip and install the extension
 
@@ -153,30 +154,17 @@ Autonomous Amplo session restored: the profile still shows two warnings at start
 
 - **ChatGPT:** the Infinix bar is back above the composer. ChatGPT redesigned its input box and renamed the layout slot the bar sits in. Infinix kept asking for the old name, so the browser dropped the bar into a stray strip at the bottom right of the composer and squeezed the textarea.
 
-## Credits & Acknowledgments
+## Credits
 
-- **Creator:** arthur (Moonyeep)
+- **Original Creator:** Moonyeep
 - **Built with:** Manus AI
 - **Based on:** ZeroScript architecture
 - **License:** GPL-3.0
 
-This project stands on the shoulders of the ZeroScript foundation but represents an independent implementation and evolution. All contributions are welcome!
-
-## Contributing
-
-This project is in early stages and needs help! If you're interested in contributing:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-Areas that need attention:
-- Bug fixes and stability improvements
-- Documentation enhancements
-- New features and integrations
-- Testing and quality assurance
+This project stands on the shoulders of the ZeroScript foundation but represents an independent implementation. The original creator has abandoned this project and releases it as a base for the community to improve upon.
 
 ## License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+
+**Important:** Any derivative work based on this project MUST also be free and open-source under GPL-3.0. Commercial closed-source derivatives are NOT permitted.
